@@ -1,5 +1,5 @@
 {
-  "name": "tuiohacks",
+  "name": "tuio-express",
   "version": "0.0.0",
   "description": "Hack to forward TUIO (OSC) events to the browser",
   "main": "server.js",
