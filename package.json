@@ -1,0 +1,18 @@
+{
+  "name": "tuiohacks",
+  "version": "0.0.0",
+  "description": "Hack to forward TUIO (OSC) events to the browser",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.12.3",
+    "osc": "^1.1.1",
+    "socket.io": "^1.3.5",
+    "ws": "^0.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rjpw",
+  "license": "MIT"
+}

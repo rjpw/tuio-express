@@ -1,0 +1,12 @@
+{
+  "name": "tuiohacks",
+  "version": "0.0.0",
+  "ignore": [],
+  "dependencies": {
+    "osc.js": ">=1.1.0",
+    "lodash": "~3.7.0",
+    "tiny-emitter": "~1.0.0",
+    "bacon": "~0.7.53",
+    "rxjs": "~2.5.2"
+  }
+}
