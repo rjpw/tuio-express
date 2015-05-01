@@ -1,7 +1,7 @@
 # tuio-express
 Experiments with TUIO and NodeJS using Express
 
-# Project Description
+## Project Description
 This project is a proof of concept client-server pair meant to demonstrate the viability of:
 
 * Handling TUIO details in the browser
@@ -9,24 +9,24 @@ This project is a proof of concept client-server pair meant to demonstrate the v
 * Supporting multiple distinct TUIO sources through a single server
 * Supporting a variety of TUIO message types
 
-# Server
-The server performs two roles:
+## Server
+The server performs the following roles:
 
-1. provide client-side static resources (JavaScript and HTML)
-2. listen for TUIO messages over UDP
-3. wrap messages to add sender identity (some senders identify themselves, but others don't)
-4. forward UDP packets over socket.io
+1. provides client-side static resources (JavaScript and HTML)
+2. listens for TUIO messages over UDP
+3. wraps messages to add sender identity (some senders identify themselves, but others don't)
+4. forwards UDP packets over socket.io
 
-# Client
-The browser-based clients perform the bulk of the work with respect to TUIO, including:
+## Client
+The browser-based clients perform the bulk of the work with respect to TUIO:
 
-1. interpretation of raw binary OSC messages into JavaScript-legible bundles
-2. mapping of OSC bundles into packets
-3. interpreting packets and maintaining a cache of TUIO objects by sender and type
-4. retiring defunct objects no longer appearing in 'alive' messages
-5. raising events for downstream applications
+1. interprets raw binary OSC messages into JavaScript-legible bundles
+2. maps OSC bundles into packets
+3. interprets packets and maintaining a cache of TUIO objects by sender and type
+4. retires defunct objects no longer appearing in 'alive' messages
+5. raises events for downstream applications
 
-# Architecture Diagram
+## Architecture Diagram
 
                               UDP                         HTTP
                                |                          |  
@@ -53,7 +53,7 @@ The browser-based clients perform the bulk of the work with respect to TUIO, inc
                                |                          |
 
 
-# Running this example
+## Running this example
 
 Clone this repository, then in the directory where this README resides install server dependencies with:
 
