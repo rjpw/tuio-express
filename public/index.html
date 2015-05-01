@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>osc.js Web Socket Demo</title>
+    <title>tuio-express demo</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" media="all" href="osc-view.css"></link>
+
+    <!-- libraries required by tuioclient.js -->
     <script src="/socket.io/socket.io.js"></script>
     <script src="/components/osc.js/src/osc.js"></script>
     <script src="/components/tiny-emitter/dist/tinyemitter.min.js"></script>
     <script src="/components/lodash/lodash.min.js"></script>
-    <script src="/components/rxjs/dist/rx.lite.min.js"></script>
+
+    <!-- tuioclient class definition -->
     <script src="/tuioclient.js"></script>
   </head>
 
   <body>
 
-      <h1>osc.js Web Socket Demo</h1>
+      <h1>tuio-express demo</h1>
 
       <div id="messageArea">
           <p id="messageLabel">TUIO Objects:</p>
           <pre id="objects"></pre>
       </div>
 
+    <!-- tuioclient sample consumer -->
     <script src="/app.js"></script>
 
   </body>

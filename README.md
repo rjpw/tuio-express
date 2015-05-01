@@ -2,9 +2,11 @@
 Experiments with TUIO and NodeJS using Express
 
 ## Project Description
-This project is a proof of concept client-server pair meant to demonstrate the viability of:
+This work demonstrates one possible use of [osc.js](https://github.com/colinbdclark/osc.js) in the browser, extending their udp-browser example [found here](https://github.com/colinbdclark/osc.js-examples) to reflect TUIO messages.
 
-* Handling TUIO details in the browser
+The project is a proof of concept client-server pair meant to demonstrate the viability of:
+
+* Defining a [TUIO](http://www.tuio.org) implementation in the browser
 * Improving reconnects by means of socket.io
 * Supporting multiple distinct TUIO sources through a single server
 * Supporting a variety of TUIO message types
@@ -13,22 +15,22 @@ This project is a proof of concept client-server pair meant to demonstrate the v
 The server performs the following roles:
 
 1. provides client-side static resources (JavaScript and HTML)
-2. listens for TUIO messages over UDP
-3. wraps messages to add sender identity (some senders identify themselves, but others don't)
-4. forwards UDP packets over socket.io
+2. listens for raw TUIO bundles over UDP
+3. wraps bundles to add sender identity (many devices lack "source" packets)
+4. forwards wrapped UDP packets over socket.io
 
 ## Client
 The browser-based clients perform the bulk of the work with respect to TUIO:
 
-1. interprets raw binary OSC messages into JavaScript-legible bundles
-2. maps OSC bundles into packets
-3. interprets packets and maintaining a cache of TUIO objects by sender and type
-4. retires defunct objects no longer appearing in 'alive' messages
+1. interprets raw binary into JavaScript-legible bundles
+2. maps OSC bundles into packets and then infers operations from packet types
+3. maintains cache of TUIO objects by sender and type
+4. retires defunct objects no longer appearing in 'alive' packets
 5. raises events for downstream applications
 
 ## Architecture Diagram
 
-                              UDP                         HTTP
+                              UDP                        HTTP
                                |                          |  
     PHYSICAL DEVICES           |          SERVER          |         WEB CLIENTS
                                |                          | 
@@ -40,7 +42,7 @@ The browser-based clients perform the bulk of the work with respect to TUIO:
     | TUIO Device | ------+    |                          |    + -- | osc.js client |
     |             |       |    |     +--------------+     |    |    |               |
     +-------------+       |    |     |    Express   |     |    |    +---------------+
-                          +--> | --> |      and     | --> | --
+                          +--> | --> |      and     | --> | ---+
     +-------------+       |    |     |   socket.io  |     |    |    +---------------+
     |             |       |    |     +--------------+     |    |    |               |
     | TUIO Device | ------+    |                          |    + -- | osc.js client |
@@ -48,7 +50,7 @@ The browser-based clients perform the bulk of the work with respect to TUIO:
     +-------------+       |    |                          |    |    +---------------+
                           |    |                          |    |
                          ...   |                          |   ...
-             (more senders)    |                          |  (more clients)
+              (more senders)   |                          |  (more clients)
                                |                          |
                                |                          |
 
@@ -71,3 +73,7 @@ You should then be able to open a browser at the server's location (e.g. http://
 
 If you don't have a device that sends TUIO messages, take a look at the [TUIO software](http://www.tuio.org/?software) under
 "TUIO Simulators".
+
+## Where to go from here
+
+You will note that index.html 
