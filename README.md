@@ -76,4 +76,10 @@ If you don't have a device that sends TUIO messages, take a look at the [TUIO so
 
 ## Where to go from here
 
-You will note that index.html 
+You will note that index.html and app.js (in the /public directory) are quite simple, and do little more than
+display the most recent live events of a given type. The next step would be to wire up those events to some kind
+of visualization, or in the case of cursor events to get them to describe some kind of interaction with objects in the DOM.
+
+For a rough idea of how that might look, consider modifying [this neat little touch visualizer](https://github.com/borismus/MagicTouch/blob/master/samples/tracker.html).
+
+
