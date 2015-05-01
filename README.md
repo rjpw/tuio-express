@@ -26,44 +26,44 @@ The browser-based clients perform the bulk of the work with respect to TUIO, inc
 5) raising events for downstream applications
 
 
-                                UDP                         HTTP
-                                 |                            |
-  PHYSICAL DEVICES               |           SERVER           |          WEB CLIENTS
-                                 |                            |
-                                 |      Raw TUIO packets      |
-                                 |      forwarded over        |
-                                 |      socket.io with a      |
-  +-------------+                |      thin wrapper for      |             +---------------+
-  |             |                |      device identity       |             |               |
-  | TUIO Device | ------+        |                            |      + ---- | osc.js client |
-  |             |       |        |      +--------------+      |      |      |               |
-  +-------------+       |        |      |    Express   |      |      |      +---------------+
-                        +------> | ---> |      and     | ---> | -----+
-  +-------------+       |        |      |   socket.io  |      |      |      +---------------+
-  |             |       |        |      +--------------+      |      |      |               |
-  | TUIO Device | ------+        |                            |      + ---- | osc.js client |
-  |             |       |        |                            |      |      |               |
-  +-------------+       |        |                            |      |      +---------------+
-                        |        |                            |      |
-                       ...       |                            |     ...
-                  (more senders) |                            |  (more clients)
-                                 |                            |
-                                 |                            |
+                                  UDP                         HTTP
+                                   |                            |
+    PHYSICAL DEVICES               |           SERVER           |          WEB CLIENTS
+                                   |                            |
+                                   |      Raw TUIO packets      |
+                                   |      forwarded over        |
+                                   |      socket.io with a      |
+    +-------------+                |      thin wrapper for      |             +---------------+
+    |             |                |      device identity       |             |               |
+    | TUIO Device | ------+        |                            |      + ---- | osc.js client |
+    |             |       |        |      +--------------+      |      |      |               |
+    +-------------+       |        |      |    Express   |      |      |      +---------------+
+                          +------> | ---> |      and     | ---> | -----+
+    +-------------+       |        |      |   socket.io  |      |      |      +---------------+
+    |             |       |        |      +--------------+      |      |      |               |
+    | TUIO Device | ------+        |                            |      + ---- | osc.js client |
+    |             |       |        |                            |      |      |               |
+    +-------------+       |        |                            |      |      +---------------+
+                          |        |                            |      |
+                         ...       |                            |     ...
+                    (more senders) |                            |  (more clients)
+                                   |                            |
+                                   |                            |
 
 
 # Running this example
 
 Clone this repository, then in the directory where this README resides install server dependencies with:
 
-  npm install
+    npm install
 
 and then install the client dependencies with
 
-  bower install
+    bower install
 
 and finally run the server with:
 
-  node server
+    node server
 
 You should then be able to open a browser at the server's location (e.g. http://localhost:8080). You may wish to edit the HTTP port if you have conflicting servers.
 
