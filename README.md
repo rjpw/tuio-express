@@ -9,7 +9,7 @@ This project is a proof of concept client-server pair meant to demonstrate the v
 * Supporting multiple distinct TUIO sources through a single server
 * Supporting a variety of TUIO message types
 
-# Architecture
+# Server
 The server performs two roles:
 
 1. provide client-side static resources (JavaScript and HTML)
@@ -17,6 +17,7 @@ The server performs two roles:
 3. wrap messages to add sender identity (some senders identify themselves, but others don't)
 4. forward UDP packets over socket.io
 
+# Client
 The browser-based clients perform the bulk of the work with respect to TUIO, including:
 
 1. interpretation of raw binary OSC messages into JavaScript-legible bundles
@@ -25,8 +26,9 @@ The browser-based clients perform the bulk of the work with respect to TUIO, inc
 4. retiring defunct objects no longer appearing in 'alive' messages
 5. raising events for downstream applications
 
+# Architecture Diagram
 
-                                  UDP                         HTTP
+                              UDP                         HTTP
                                |                          |  
     PHYSICAL DEVICES           |          SERVER          |         WEB CLIENTS
                                |                          | 
