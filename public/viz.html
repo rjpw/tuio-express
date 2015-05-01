@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Visualizing /tuio/2Dcur</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+	
+		<style type="text/css">
+			body { margin: 0px; overflow: hidden; }
+		</style>
+
+    <!-- libraries required by tuioclient.js -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/components/osc.js/src/osc.js"></script>
+    <script src="/components/tiny-emitter/dist/tinyemitter.min.js"></script>
+    <script src="/components/lodash/lodash.min.js"></script>
+
+    <!-- tuioclient class definition -->
+    <script src="/tuioclient.js"></script>
+
+	</head>
+
+	<body>
+
+		<canvas id="canvas" width="300" height="300" style="top:0px; left:0px; width: 300px; height: 300px;"></canvas>
+
+		<!-- tuioclient demo app -->
+		<script src="touchvis.js"></script>
+		
+	</body>
+</html>

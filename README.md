@@ -80,6 +80,5 @@ You will note that index.html and app.js (in the /public directory) are quite si
 display the most recent live events of a given type. The next step would be to wire up those events to some kind
 of visualization, or in the case of cursor events to get them to describe some kind of interaction with objects in the DOM.
 
-For a rough idea of how that might look, consider modifying [this neat little touch visualizer](https://github.com/borismus/MagicTouch/blob/master/samples/tracker.html).
-
+For a rough idea of how that might look, [this neat little touch visualizer](https://github.com/borismus/MagicTouch/blob/master/samples/tracker.html) was modified for this project. You can find it by loading http://localhost:8080/viz.html (assuming you are running locally). 
 
